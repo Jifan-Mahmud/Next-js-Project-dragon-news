@@ -24,7 +24,12 @@ const LoginPage = () => {
       rememberMe: true,
       callbackURL: "/",
     });
-    console.log(res, error);
+   if (error) {
+      alert(error.message);
+    }
+    if (res) {
+      alert("User created successfully");
+    }
   };
   return (
     <div className="container mx-auto min-h-[80vh] flex justify-center items-center bg-slate-100 mt-6">
